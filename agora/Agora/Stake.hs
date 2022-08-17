@@ -30,28 +30,28 @@ module Agora.Stake (
   pisIrrelevant,
 ) where
 
-import Agora.Proposal (PProposalId, PResultTag, ProposalId (..), ResultTag (..))
+import Agora.Proposal (PProposalId, PResultTag, ProposalId, ResultTag)
 import Agora.SafeMoney (GTTag)
-import Data.Tagged (Tagged (..))
+import Data.Tagged (Tagged)
 import Generics.SOP qualified as SOP
 import Plutarch.Api.V1 (PCredential)
 import Plutarch.Api.V2 (
   PMaybeData,
  )
 import Plutarch.DataRepr (
-  DerivePConstantViaData (..),
+  DerivePConstantViaData (DerivePConstantViaData),
  )
 import Plutarch.Extra.Field (pletAll)
 import Plutarch.Extra.IsData (
-  DerivePConstantViaDataList (..),
+  DerivePConstantViaDataList (DerivePConstantViaDataList),
   ProductIsData (ProductIsData),
  )
 import Plutarch.Extra.List (pnotNull)
-import Plutarch.Extra.Sum (PSum (..))
+import Plutarch.Extra.Sum (PSum (PSum))
 import Plutarch.Extra.Traversable (pfoldMap)
-import Plutarch.Lift (PConstantDecl, PUnsafeLiftDecl (..))
+import Plutarch.Lift (PConstantDecl, PUnsafeLiftDecl (PLifted))
 import Plutarch.SafeMoney (PDiscrete)
-import Plutarch.Show (PShow (..))
+import Plutarch.Show (PShow (pshow'))
 import PlutusLedgerApi.V1 (Credential)
 import PlutusTx qualified
 import Prelude hiding (Num (..))

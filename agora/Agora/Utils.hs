@@ -33,18 +33,18 @@ import Plutarch.Api.V1.AssocMap qualified as PAssocMap
 import Plutarch.Api.V2 (
   PDatum,
   PDatumHash,
-  POutputDatum (..),
+  POutputDatum (PNoOutputDatum, POutputDatum, POutputDatumHash),
   PTuple,
  )
 import Plutarch.Extra.Functor (pfmap)
 import Plutarch.Extra.Maybe (passertPJust, pjust, pnothing)
 import PlutusLedgerApi.V2 (
-  Address (..),
-  Credential (..),
+  Address (Address),
+  Credential (ScriptCredential),
   MintingPolicy,
-  TokenName (..),
+  TokenName (TokenName),
   Validator,
-  ValidatorHash (..),
+  ValidatorHash (ValidatorHash),
  )
 
 {- Functions which should (probably) not be upstreamed

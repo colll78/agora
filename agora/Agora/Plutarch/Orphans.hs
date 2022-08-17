@@ -7,10 +7,10 @@
 
 module Agora.Plutarch.Orphans () where
 
-import Plutarch.Api.V2 (PDatumHash (..), PScriptHash (..))
-import Plutarch.Builtin (PIsData (..))
+import Plutarch.Api.V2 (PDatumHash (PDatumHash), PScriptHash (PScriptHash))
+import Plutarch.Builtin (PIsData (pdataImpl, pfromDataImpl))
 import Plutarch.Extra.TermCont (ptryFromC)
-import Plutarch.TryFrom (PTryFrom (..))
+import Plutarch.TryFrom (PTryFrom (PTryFromExcess, ptryFrom'))
 import Plutarch.Unsafe (punsafeCoerce)
 
 newtype Flip f a b = Flip (f b a) deriving stock (Generic)
